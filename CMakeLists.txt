@@ -4,6 +4,7 @@ project(oop)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_program(CLANG_TIDY clang-tidy)
 
 if (CLANG_TIDY)

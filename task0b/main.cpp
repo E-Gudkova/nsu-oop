@@ -7,7 +7,8 @@
 
 
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+    constexpr int expected_argc = 3;
+    if (argc != expected_argc) {
         std::cout << "Error! Expected 3 arguments" << "\n";
         return 1;
     }
@@ -34,8 +35,9 @@ int main(int argc, char *argv[]) {
     while (std::getline(in, line)) {
         counter.addLine(line);
     }
-    CsvWriter writer;
-    writer.write(counter.getCounts(), counter.getTotalWords(), out);
+    auto items = counter.sortedByFrequency();
+    const std::string csvHeader = "Слово,Частота,Частота (%)";
+    CsvWriter::write(items, counter.getTotalWords(), csvHeader, out);
 
     return 0;
 }

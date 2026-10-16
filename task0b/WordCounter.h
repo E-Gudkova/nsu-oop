@@ -2,6 +2,7 @@
 #define OOP_WORDCOUNTER_H
 #include <string>
 #include <map>
+#include <list>
 
 class WordCounter {
 public:
@@ -10,6 +11,12 @@ public:
     const std::map<std::string, int> &getCounts() const;
 
     int getTotalWords() const;
+
+    static double getPercent(int count, int totalWords);
+
+    std::list<std::pair<std::string, int>> sortedByFrequency() const;
+
+
 
 private:
     std::map<std::string, int> counts_;

@@ -1,5 +1,7 @@
+build/
 .idea/
 cmake-build-*/
+task0a/
 *.o
 *.out
 *.exe

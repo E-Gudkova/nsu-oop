@@ -8,10 +8,10 @@
 
 class CsvWriter {
 public:
-    void write(const std::map<std::string, int> &counts,
-               int totalWords,
+     static void write(const std::list<std::pair<std::string, int>>& items,
+                int totalWords,
+               const std::string& header,
                std::ofstream &out);
 
-    ~CsvWriter();
 };
 #endif //OOP_CSVWRITER_H
